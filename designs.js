@@ -12,17 +12,19 @@ $size.addEventListener('submit', function (event) {
   makeGrid(height,width);
 })
 
+// Call the makeGrid function
+// Loop to create the grid using input from user
 function makeGrid(height,width) {
   $grid.innerHTML = '';
-  for (let row = 0; row < width; row++) {
+  for (let row = 0; row < height; row++) {
     let addRow = $grid.insertRow();
-      for (let col = 0; col < height; col++) {
+      for (let col = 0; col < width; col++) {
         let addCol = addRow.insertCell();
         addCol.onclick = changeColor;
       }
   }
 }
-
+// Fill the square clicked with the color selected by the user
 function changeColor() {
   this.style.background = $color.value;
 }
